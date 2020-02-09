@@ -35,7 +35,7 @@ public class HomeController {
 	@GetMapping("/display")
 	public List<Student> display() {
 		List<Student> list=service.display();
-		return list;
+		return list; 
 	}
 
 	@PostMapping("/update")
@@ -44,12 +44,18 @@ public class HomeController {
 		return 0;
 	}
 
+	@DeleteMapping("/delete1/{id}")
+	public int delete1(@PathVariable int id) {
+		service.delete(id);
+		return 0;
+	}
+	
+
 	@DeleteMapping("/delete/{id}")
 	public int delete(@PathVariable int id) {
 		service.delete(id);
 		return 0;
 	}
-	
 	
 
 }
